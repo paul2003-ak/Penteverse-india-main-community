@@ -353,7 +353,7 @@ export const reviews = [
 
 // constants/index.js
 import ayan from '../../public/assets/ayan.jpg'
-import asish from '../../public/assets/asis.jpg'
+import asish from '../../public/assets/Asis.jpg'
 export const teamMembers = [
   {
     name: "Ayan Paul",
