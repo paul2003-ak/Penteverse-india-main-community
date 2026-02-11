@@ -10,7 +10,7 @@ const About = () => {
     <section className="c-space section-spacing py-20" id="about">
       <div className="flex flex-col gap-2 mb-12 px-4 md:px-0">
         <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">
-          About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Pentaverse</span>
+          Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Pentaverse</span>
         </h2>
         <p className="text-neutral-400 font-mono text-sm md:text-base max-w-xl">
           // SYSTEM STATUS: OPERATIONAL

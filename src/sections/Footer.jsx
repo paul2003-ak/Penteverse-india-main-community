@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
+import { Mail, MapPin, ArrowUpRight,} from "lucide-react";
 import { mySocials } from "../constants";
 
-// Footer Link Data (You can move this to constants/index.js if you prefer)
 const FOOTER_LINKS = [
   {
     title: "Community",
@@ -34,67 +35,65 @@ const FOOTER_LINKS = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#0E0C15] pt-16 pb-8 border-t border-white/10 overflow-hidden text-sm">
-      <div className="c-space mx-auto px-6 md:px-12">
+    <footer className="relative bg-[#06060E] pt-24 pb-12 border-t border-white/5 overflow-hidden text-sm">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+      
+      <div className="c-space mx-auto px-6 md:px-12 relative z-10">
         
-        {/* --- TOP SECTION: Grid Layout --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16">
+        {/* --- TOP SECTION --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
-          {/* Column 1: Brand & Contact (Span 4 cols) */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white font-bold text-xl">
-                P
+          {/* Brand Identity */}
+          <div className="lg:col-span-4 space-y-8">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                  <div className="relative w-12 h-12 rounded-xl bg-black border border-white/10 flex items-center justify-center text-white font-black text-2xl">
+                    P
+                  </div>
+                </div>
+                <h2 className="text-3xl font-black text-white tracking-tighter uppercase">
+                  Penta<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">verse</span>
+                </h2>
               </div>
-              <h2 className="text-2xl font-bold text-white tracking-wide">
-                Penta<span className="text-purple-400">verse</span>
-              </h2>
+
+              <p className="text-neutral-400 leading-relaxed max-w-sm font-mono text-xs uppercase tracking-widest opacity-80">
+                // Empowering the next generation of builders through Cloud, AI, and Web3 infrastructure.
+              </p>
             </div>
 
-            <p className="text-neutral-400 leading-relaxed max-w-sm">
-              A community-driven tech ecosystem empowering builders across Cloud, AI, Web, App, and Web3 to learn, build, and grow together.
-            </p>
-
-            {/* Contact Info */}
-            <div className="flex flex-col gap-3 mt-2">
-              <a href="mailto:indiapentaverse@gmail.com" className="flex items-center gap-3 text-neutral-300 hover:text-cyan-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <span>indiapentaverse@gmail.com</span>
+            {/* Contact Intel */}
+            <div className="space-y-4">
+              <a href="mailto:indiapentaverse@gmail.com" className="flex items-center gap-3 text-neutral-400 hover:text-cyan-400 transition-all group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-cyan-400/10 border border-white/5 group-hover:border-cyan-400/50">
+                  <Mail size={16} />
+                </div>
+                <span className="font-medium">indiapentaverse@gmail.com</span>
               </a>
-              <div className="flex items-center gap-3 text-neutral-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Pan-India Community</span>
+              <div className="flex items-center gap-3 text-neutral-400 group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/5">
+                  <MapPin size={16} />
+                </div>
+                <span className="font-medium">Pan-India Tech Ecosystem</span>
               </div>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex gap-3 mt-2">
-              {mySocials.map((social, index) => (
-                <a 
-                  key={index} 
-                  href={social.href} 
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-500 transition-all duration-300 group"
-                >
-                  <img src={social.icon} className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" alt={social.name} />
-                </a>
-              ))}
             </div>
           </div>
 
-          {/* Spacer Column (Desktop only) */}
           <div className="hidden lg:block lg:col-span-1" />
 
-          {/* Columns 2, 3, 4: Links (Span remaining cols) */}
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+          {/* Links Matrix */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12">
             {FOOTER_LINKS.map((section) => (
-              <div key={section.title} className="flex flex-col gap-4">
-                <h3 className="text-white font-bold text-lg">{section.title}</h3>
-                <ul className="flex flex-col gap-3">
+              <div key={section.title} className="space-y-6">
+                <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] opacity-50">{section.title}</h3>
+                <ul className="space-y-4">
                   {section.links.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="text-neutral-400 hover:text-cyan-400 transition-colors duration-200">
+                      <a href={link.href} className="text-neutral-400 hover:text-white flex items-center gap-1 group transition-all">
                         {link.name}
+                        <ArrowUpRight size={12} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                       </a>
                     </li>
                   ))}
@@ -104,37 +103,61 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* --- NEWSLETTER CARD --- */}
-        <div className="relative rounded-2xl bg-white/5 border border-white/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
-          {/* Background Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/20 blur-[80px] rounded-full pointer-events-none" />
+        {/* --- ENHANCED NEWSLETTER --- */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative rounded-3xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 p-8 md:p-12 overflow-hidden"
+        >
+          {/* Animated Background Pulse */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
           
-          <div className="relative z-10 text-center md:text-left">
-            <h3 className="text-xl font-bold text-white mb-2">Stay in the Loop</h3>
-            <p className="text-neutral-400">Get the latest updates on events, workshops, and opportunities.</p>
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="text-center lg:text-left space-y-3">
+              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">Stay Synchronized</h3>
+              <p className="text-neutral-400 max-w-md">Get exclusive access to early-bird workshops, project leaks, and community chapters.</p>
+            </div>
+
+            <form className="w-full lg:w-auto flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+               <div className="relative flex-grow group">
+                 <input 
+                   type="email" 
+                   placeholder="Enter neural link (email)" 
+                   className="w-full sm:w-80 px-6 py-4 rounded-xl bg-black/60 border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                 />
+               </div>
+               <button 
+                 type="submit" 
+                 className="relative px-8 py-4 rounded-xl bg-cyan-500 text-black font-black uppercase tracking-widest hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300 active:scale-95"
+               >
+                 Initialize
+               </button>
+            </form>
+          </div>
+        </motion.div>
+
+        {/* --- SOCIAL & LEGAL --- */}
+        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 text-neutral-500 font-mono text-[10px] uppercase tracking-widest">
+            <p>© 2025 Pentaverse Hub. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-cyan-400 transition-colors">T&C</a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Shield</a>
+            </div>
           </div>
 
-          <form className="relative z-10 flex flex-col sm:flex-row gap-3 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
-             <input 
-               type="email" 
-               placeholder="Enter your email" 
-               className="w-full sm:w-80 px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-cyan-400 transition-colors"
-             />
-             <button 
-               type="submit" 
-               className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-bold hover:scale-105 transition-transform duration-200 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
-             >
-               SUBSCRIBE
-             </button>
-          </form>
-        </div>
-
-        {/* --- BOTTOM BAR --- */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© 2025 Pentaverse. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+          <div className="flex items-center gap-4">
+            {mySocials.map((social, index) => (
+              <motion.a 
+                key={index} 
+                href={social.href} 
+                whileHover={{ y: -5 }}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:border-cyan-500/50 transition-all group"
+              >
+                <img src={social.icon} className="w-5 h-5 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" alt={social.name} />
+              </motion.a>
+            ))}
           </div>
         </div>
 
