@@ -6,6 +6,7 @@ import Contact from "./sections/Contact";
 import Footer from './sections/Footer';
 import ChaptersMap from "./sections/ChaptersMap";
 import EventsSection from "./sections/EventsSection";
+import ChatBot from "./sections/Chatbot";
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
       <Testimonial />
       <Contact />
       <Footer/>
+
+      <ChatBot/>
     </div>
   );
 };
